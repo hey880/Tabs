@@ -1,0 +1,11 @@
+.Locator {
+    width: 521px;
+    line-height: 1010px;
+    background-color: #2B2B2B;
+}
+
+.Locator_header {
+    height: 30px;
+    background-color: #3C3F41;
+    border: 1px solid #383A3B;
+}

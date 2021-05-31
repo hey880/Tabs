@@ -1,0 +1,11 @@
+.Project {
+    width: 542px;
+    line-height: 1010px;
+    background-color: #2B2B2B;
+}
+
+.Project_header {
+    height: 30px;
+    background-color: #3C3F41;
+    border: 1px solid #383A3B;
+}
