@@ -1,20 +1,37 @@
 import "./App.css";
 import { useState } from "react";
-import { FaRegFolder, FaMobileAlt } from "react-icons/fa";
-import logo from "./img/logo.png";
+import {ReactComponent as Logo} from './img/logo.svg';
+import {ReactComponent as FolderIcon} from './img/folder_24px.svg';
+import {ReactComponent as DeviceIcon} from './img/phone_android_24px.svg';
+import {ReactComponent as LocatorIcon} from './img/my_location_24px_outlined.svg';
 import Project from "./Tabs/Project";
 import Device from "./Tabs/Device";
 import Locator from "./Tabs/Locator";
 
 function App() {
+
+  const project_minimize = () => {
+    setProject(false);
+  }
+
+  const device_minimize = () => {
+    setDevice(false);
+  }
+
+  const locator_minimize = () => {
+    setLocator(false);
+  }
+
   const [project, setProject] = useState(false);
   const [device, setDevice] = useState(false);
   const [locator, setLocator] = useState(false);
 
+  console.log(project, device, locator);
+
   return (
     <div className="App">
       <header className="titlebar">
-        <img src={logo} alt="AppTestAI_Company_Logo" />
+        <Logo className="logo"/>
       </header>
       <div className="App__contents">
         <div className="App__left_tab">
@@ -26,14 +43,14 @@ function App() {
               return (setProject(!project));
             }}
           >
-            <FaRegFolder className="project_icon" size="20"/>&nbsp;Project
+            <FolderIcon className="folder_icon"/>&nbsp;Project
           </li>
         </div>
 
         {project ? (
           
           <div className="Project_Panel">
-            <Project />
+            <Project minimize={project_minimize}/>
             <div className="splitter"></div>
           </div>
         
@@ -44,15 +61,14 @@ function App() {
         {device ? (
           <div className="Device_Panel">
             <div className="splitter"></div>
-            <FaMobileAlt/>
-            <Device />
+            <Device minimize={device_minimize}/>
           </div>
         ) : null}
 
         {locator ? (
           <div className="Locator_Panel">
             <div className="splitter"></div>
-            <Locator />
+            <Locator minimize={locator_minimize}/>
           </div>
         ) : null}
 
@@ -66,7 +82,7 @@ function App() {
               );
             }}
           >
-            Device
+            <DeviceIcon/> Device
           </li>
 
           <li style={{ background:
@@ -78,7 +94,7 @@ function App() {
               );
             }}
           >
-            Locator
+            <LocatorIcon/> Locator
           </li>
         </div>
       </div>

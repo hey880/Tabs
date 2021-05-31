@@ -5,7 +5,24 @@
 }
 
 .Device_header {
+    position: relative;    
+    line-height: 30px;
     height: 30px;
     background-color: #3C3F41;
     border: 1px solid #383A3B;
+}
+
+.minimize_icon {
+    position: absolute;
+    float: right;
+    right: 14px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.setting_icon {
+    position: absolute;
+    right: 45.83px;
+    top: 5px;
+    float: right;
 }

@@ -4,6 +4,10 @@
   height: 40px;
 }
 
+.logo {
+  margin-left: 4px;
+}
+
 .App__contents {
   display: flex;
   width: 100%;
@@ -60,6 +64,10 @@
   font-weight: 700;
 }
 
+.folder_icon {
+  transform: rotate(180deg);
+}
+
 .App__left_tab li {
   background-color: #3C3F41;
   width: 20px;
@@ -68,7 +76,6 @@
   line-height: -36px;
   transform: rotate(-180deg);
 }
-
 
 .project_icon {
   transform: rotate(90deg);
