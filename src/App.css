@@ -1,13 +1,13 @@
 .titlebar {
   background-color: #3C3F41;
   border: 1px solid #383A3B;
+  width: 1918px;
   height: 40px;
 }
 
 .logo {
   margin-left: 4px;
 }
-
 
 .App__contents {
   display: flex;
@@ -20,35 +20,28 @@
   text-align: center;
 }
 
-.Project_Panel {
+.Project_Panel_ {
   display: flex;
-  width: 542x;
+  width: 100%;
   height: 1040px;
   font-weight: bold;
 }
 
-.splitter {
-  width: 10px;
-  cursor: w-resize;
-  background-color: #3C3F41;
-}
-
-.Device_Panel {
-  display: flex;
-  width: 521px;
+.Device_Panel_ {
+  width: auto;
   height: 1040px;
   font-weight: bold;
 }
 
-.Locator_Panel {
-  display: flex;
-  width: 521px;
+.Locator_Panel_ {
+  width: auto;
   height: 1040px;
   font-weight: bold;
 }
 
 .App__empty {
-  width: 100%;
+  position: relative;
+  width: 1880px;
   height: 1040px;
   font-family: 'Roboto', sans-serif;
   line-height: 1072px;
@@ -84,11 +77,12 @@
 }
 
 .App__right_tab {
+  display: flex;
   list-style: none;
   writing-mode: vertical-rl;
   background-color: #3C3F41;
-  display: flex;
   width: 20px;
+  position: relative;
   flex-direction: row;
   color: #B3B3B3;
   font-weight: 700;

@@ -50,7 +50,7 @@ function App() {
 
         {project ? (
           
-          <div className="Project_Panel">
+          <div className="Project_Panel_">
             <Project minimize={project_minimize}/>
           </div>
         
@@ -59,13 +59,13 @@ function App() {
         <div className="App__empty">Empty</div>
   
         {device ? (
-          <div className="Device_Panel">
+          <div className="Device_Panel_">
             <Device minimize={device_minimize}/>
           </div>
         ) : null}
 
         {locator ? (
-          <div className="Locator_Panel">
+          <div className="Locator_Panel_">
             <Locator minimize={locator_minimize}/>
           </div>
         ) : null}

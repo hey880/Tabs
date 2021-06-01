@@ -8,6 +8,7 @@
     width: 542px;
     line-height: 1010px;
     background-color: #2B2B2B;
+    overflow: hidden;
 }
 
 .Project_header {

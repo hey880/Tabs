@@ -8,15 +8,11 @@ function Project(props) {
   const panel = useRef(null);
 
   const resizeRight = () => {
-    if (movementX <= panel.current.getBoundingClientRect().x) {
+    
       panel.current.style.width = `${
         panel.current.getBoundingClientRect().width + movementX
       }px`;
-    } else {
-      panel.current.style.width = `${
-        panel.current.getBoundingClientRect().width - movementX
-      }px`;
-    }
+  
   };
 
   const [movementX, setMovementX] = useState();
