@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {ReactComponent as Logo} from './img/logo.svg';
 import {ReactComponent as FolderIcon} from './img/folder_24px.svg';
 import {ReactComponent as DeviceIcon} from './img/phone_android_24px.svg';
@@ -10,6 +10,12 @@ import Locator from "./Tabs/Locator";
 
 function App() {
 
+  const [project, setProject] = useState(false);
+  const [device, setDevice] = useState(false);
+  const [locator, setLocator] = useState(false);
+
+  
+  //각 컴포넌트에 props로 넘겨줄 최소화 버튼 동작 함수
   const project_minimize = () => {
     setProject(false);
   }
@@ -22,12 +28,7 @@ function App() {
     setLocator(false);
   }
 
-  const [project, setProject] = useState(false);
-  const [device, setDevice] = useState(false);
-  const [locator, setLocator] = useState(false);
-
-  console.log(project, device, locator);
-
+ 
   return (
     <div className="App">
       <header className="titlebar">
@@ -51,7 +52,6 @@ function App() {
           
           <div className="Project_Panel">
             <Project minimize={project_minimize}/>
-            <div className="splitter"></div>
           </div>
         
         ) : null}
@@ -60,14 +60,12 @@ function App() {
   
         {device ? (
           <div className="Device_Panel">
-            <div className="splitter"></div>
             <Device minimize={device_minimize}/>
           </div>
         ) : null}
 
         {locator ? (
           <div className="Locator_Panel">
-            <div className="splitter"></div>
             <Locator minimize={locator_minimize}/>
           </div>
         ) : null}

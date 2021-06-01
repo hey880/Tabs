@@ -2,6 +2,7 @@
     width: 521px;
     line-height: 1010px;
     background-color: #2B2B2B;
+    border-left: 10px solid #3C3F41;
 }
 
 .Device_header {

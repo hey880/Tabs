@@ -8,6 +8,7 @@
   margin-left: 4px;
 }
 
+
 .App__contents {
   display: flex;
   width: 100%;
@@ -28,6 +29,7 @@
 
 .splitter {
   width: 10px;
+  cursor: w-resize;
   background-color: #3C3F41;
 }
 
@@ -59,7 +61,6 @@
   width: 20px;
   background-color: #3C3F41;
   color: #B3B3B3;
-  cursor: pointer;
   font-size: 15px;
   font-weight: 700;
 }
@@ -75,6 +76,7 @@
   text-align: center;
   line-height: -36px;
   transform: rotate(-180deg);
+  cursor: pointer;
 }
 
 .project_icon {
@@ -89,7 +91,6 @@
   width: 20px;
   flex-direction: row;
   color: #B3B3B3;
-  cursor: pointer;
   font-weight: 700;
 }
 
@@ -98,4 +99,5 @@
   width: 20px;
   height: 130px;
   text-align: center;
+  cursor: pointer;
 }
