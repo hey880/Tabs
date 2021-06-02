@@ -1,4 +1,6 @@
-.Project_all {
+$side_background : #3C3F41;
+
+.Project_container {
     display: flex;
     position: relative;
     flex-direction: row;
@@ -15,7 +17,7 @@
     position: relative;    
     line-height: 30px;
     height: 30px;
-    background-color: #3C3F41;
+    background-color: $side_background;
     border: 1px solid #383A3B;
 }
 
@@ -28,10 +30,9 @@
 }
 
 .setting_icon {
-    position: absolute;
+    @extend .minimize_icon;
     right: 45.83px;
-    top: 5px;
-    float: right;
+    cursor: default;
 }
 
 .Project_splitter {
@@ -39,6 +40,6 @@
     width: 10px;
     height: 100%;
     left: 100%;
-    background-color: #3C3F41;
+    background-color: $side_background;
     cursor: e-resize;
   }

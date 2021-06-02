@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+$background : #2B2B2B;
+$side_background : #3C3F41;
+
+.titlebar {
+  background-color: $side_background;
+  border: 1px solid #383A3B;
+  width: 1918px;
+  height: 40px;
+}
+
+.logo {
+  margin-left: 4px;
+}
+
+.App__contents {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  height: 1040px;
+  font-family: 'Roboto', sans-serif;
+  color: #B3B3B3;
+  background-color: #2B2B2B;
+  text-align: center;
+  overflow: hidden;
+}
+
+.App__contents_project_panel {
+  display: flex;
+  width: 100%;
+  height: 1040px;
+}
+
+.App__contents_empty_panel {
+  width: 1880px;
+  height: 1040px;
+  line-height: 1072px;
+}
+
+.App__contents_device_panel {
+  width: auto;
+  height: 1040px;
+}
+
+.App__contents_locator_panel {
+  @extend .App__contents_device_panel;
+}
+
+.App__contents_left_sidebar {
+  list-style: none;
+  writing-mode: vertical-rl;
+  width: 20px;
+  background-color: $side_background;
+  color: #B3B3B3;
+  font-size: 15px;
+
+  li {
+    background-color: $side_background;
+    width: 20px;
+    height: 130px;
+    text-align: center;
+    line-height: -36px;
+    transform: rotate(-180deg);
+    cursor: pointer;
+  }
+}
+
+.folder_icon {
+  transform: rotate(180deg);
+}
+
+.App__contents_right_sidebar {
+  @extend .App__contents_left_sidebar;
+  display: flex;
+  flex-direction: row;
+  li {
+    transform: rotate(0);
+  }
+}

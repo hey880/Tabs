@@ -1,15 +1,15 @@
-.Locator {
+.Device {
     width: 511px;
     line-height: 1010px;
     background-color: #2B2B2B;
     overflow: hidden;
 }
 
-.Locator_all {
+.Device_all {
     display: flex;
 }
 
-.Locator_splitter {
+.Device_splitter {
     position: absolute;
     width: 10px;
     height: 1040px;
@@ -17,7 +17,7 @@
     cursor: e-resize;
 }
 
-.Locator_header {
+.Device_header {
     position: relative;    
     line-height: 30px;
     height: 30px;
@@ -34,8 +34,7 @@
 }
 
 .setting_icon {
-    position: absolute;
+    @extend .minimize_icon;
     right: 45.83px;
-    top: 5px;
-    float: right;
+    cursor: default;
 }

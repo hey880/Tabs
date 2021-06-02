@@ -1,23 +1,18 @@
-import React, {useState, useRef, useEffect} from 'react';
-import {ReactComponent as Setting} from '../img/settings.svg';
-import {ReactComponent as Minimize} from '../img/minimize_24px.svg';
-import './Locator.css';
+import React, { useState, useRef, useEffect } from "react";
+import { ReactComponent as Setting } from "../img/settings.svg";
+import { ReactComponent as Minimize } from "../img/minimize_24px.svg";
+import "./Locator.scss";
 
-function Device (props) {
-
-    const panel = useRef(null);
-
-  const resizeRight = () => {
-
-      panel.current.style.width = `${
-        panel.current.getBoundingClientRect().width - movementX
-      }px`;
- 
-  };
-
+function Locator(props) {
+  const panel = useRef(null);
   const [movementX, setMovementX] = useState();
-
   const [mouseDown, setMouseDown] = useState(false);
+
+  const resize = () => {
+    panel.current.style.width = `${
+      panel.current.getBoundingClientRect().width - movementX
+    }px`;
+  };
 
   const handleMouseDown = () => {
     setMouseDown(true);
@@ -27,12 +22,11 @@ function Device (props) {
     const handleMouseMove = (e) => {
       if (!mouseDown) return;
       setMovementX(e.movementX);
-      console.log(e.movementX, e.movementY);
     };
 
     if (mouseDown) {
       window.addEventListener("mousemove", handleMouseMove);
-      resizeRight();
+      resize();
     }
 
     return () => {
@@ -51,25 +45,32 @@ function Device (props) {
     };
   }, []);
 
-    return <div className="Locator_all">
-        <div className="Locator" ref={panel}>
-            <div className="Locator_header">
-                <span className="setting_icon"><Setting/></span>
-                <span className="minimize_icon" onClick={()=>{
-                    return props.minimize();
-                }}><Minimize/></span>
-            </div>
-            <div className="Locator_panel">
-                Locator Panel
-            </div>
+  return (
+    <div className="Locator_container">
+      <div className="Locator" ref={panel}>
+        <div className="Locator_header">
+          <span className="setting_icon">
+            <Setting />
+          </span>
+          <span
+            className="minimize_icon"
+            onClick={() => {
+              return props.minimize();
+            }}
+          >
+            <Minimize />
+          </span>
         </div>
-        <div
+        <div className="Locator_panel">Locator Panel</div>
+      </div>
+      <div
         className="Locator_splitter"
         onMouseDown={() => {
-            return handleMouseDown();
+          return handleMouseDown();
         }}
-        ></div>
+      ></div>
     </div>
+  );
 }
 
-export default Device;
+export default Locator;

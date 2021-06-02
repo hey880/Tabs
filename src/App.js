@@ -1,98 +1,92 @@
-import "./App.css";
-import { useState, useRef } from "react";
-import {ReactComponent as Logo} from './img/logo.svg';
-import {ReactComponent as FolderIcon} from './img/folder_24px.svg';
-import {ReactComponent as DeviceIcon} from './img/phone_android_24px.svg';
-import {ReactComponent as LocatorIcon} from './img/my_location_24px_outlined.svg';
+import "./App.scss";
+import { useState } from "react";
+import { ReactComponent as Logo } from "./img/logo.svg";
+import { ReactComponent as FolderIcon } from "./img/folder_24px.svg";
+import { ReactComponent as DeviceIcon } from "./img/phone_android_24px.svg";
+import { ReactComponent as LocatorIcon } from "./img/my_location_24px_outlined.svg";
 import Project from "./Tabs/Project";
 import Device from "./Tabs/Device";
 import Locator from "./Tabs/Locator";
 
 function App() {
-
   const [project, setProject] = useState(false);
   const [device, setDevice] = useState(false);
   const [locator, setLocator] = useState(false);
 
-  
-  //각 컴포넌트에 props로 넘겨줄 최소화 버튼 동작 함수
-  const project_minimize = () => {
-    setProject(false);
+  const unselected = "#3C3F41";
+  const selected = "#2B2B2B";
+
+  const minimize = {
+    project : () => {
+      setProject(false);
+    },
+    device: () => {
+      setDevice(false);
+    },
+    locator: () => {
+      setLocator(false);
+    }
   }
 
-  const device_minimize = () => {
-    setDevice(false);
-  }
-
-  const locator_minimize = () => {
-    setLocator(false);
-  }
-
- 
   return (
     <div className="App">
       <header className="titlebar">
-        <Logo className="logo"/>
+        <Logo className="logo" />
       </header>
       <div className="App__contents">
-        <div className="App__left_tab">
-          
-          <li style={{ background:
-            project ? "#2B2B2B": "#3C3F41"
-          }}
+        <div className="App__contents_left_sidebar">
+          <li
+            style={{ background: project ? selected : unselected }}
             onClick={() => {
-              return (setProject(!project));
+              return setProject(!project);
             }}
           >
-            <FolderIcon className="folder_icon"/>&nbsp;Project
+            <FolderIcon className="folder_icon" />
+            &nbsp;Project
           </li>
         </div>
 
         {project ? (
-          
-          <div className="Project_Panel_">
-            <Project minimize={project_minimize}/>
+          <div className="App__contents_project_panel">
+            <Project minimize={minimize.project} />
           </div>
-        
         ) : null}
 
-        <div className="App__empty">Empty</div>
-  
+        <div className="App__contents_empty_panel">Empty</div>
+
         {device ? (
-          <div className="Device_Panel_">
-            <Device minimize={device_minimize}/>
+          <div className="App__contents_device_panel">
+            <Device minimize={minimize.device} />
           </div>
         ) : null}
 
         {locator ? (
-          <div className="Locator_Panel_">
-            <Locator minimize={locator_minimize}/>
+          <div className="App__contents_locator_panel">
+            <Locator minimize={minimize.locator} />
           </div>
         ) : null}
 
-        <div className="App__right_tab">
-          <li style={{ background:
-            device ? "#2B2B2B": "#3C3F41"
-          }}
+        <div className="App__contents_right_sidebar">
+          <li
+            style={{ background: device ? selected : unselected }}
             onClick={() => {
-              return (
-                locator ? setLocator(false) & setDevice(true) : setDevice(!device)
-              );
+              return locator
+                ? setLocator(false) & setDevice(true)
+                : setDevice(!device);
             }}
           >
-            <DeviceIcon/> Device
+            <DeviceIcon /> Device
           </li>
 
-          <li style={{ background:
-            locator ? "#2B2B2B": "#3C3F41"
-          }}
+          <li
+            style={{ background: locator ? selected : unselected }}
             onClick={() => {
-              return (
-                device ? setDevice(false) & setLocator(true) : setLocator(!locator)
-              );
+              return device
+                ? setDevice(false) & setLocator(true)
+                : setLocator(!locator);
             }}
           >
-            <LocatorIcon/> Locator
+            <LocatorIcon /> Locator
           </li>
         </div>
       </div>
