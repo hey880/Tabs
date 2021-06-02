@@ -1,20 +1,14 @@
+.Device_container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+}
+
 .Device {
     width: 511px;
     line-height: 1010px;
     background-color: #2B2B2B;
     overflow: hidden;
-}
-
-.Device_all {
-    display: flex;
-}
-
-.Device_splitter {
-    position: absolute;
-    width: 10px;
-    height: 1040px;
-    background-color: #3C3F41;
-    cursor: e-resize;
 }
 
 .Device_header {
@@ -37,4 +31,13 @@
     @extend .minimize_icon;
     right: 45.83px;
     cursor: default;
+}
+
+.Device_splitter {
+    left: 0;
+    width: 10px;
+    height: 1040px;
+    right: 100%;
+    background-color: #3C3F41;
+    cursor: e-resize;
 }

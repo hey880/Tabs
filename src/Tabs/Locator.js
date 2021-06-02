@@ -4,6 +4,7 @@ import { ReactComponent as Minimize } from "../img/minimize_24px.svg";
 import "./Locator.scss";
 
 function Locator(props) {
+
   const panel = useRef(null);
   const [movementX, setMovementX] = useState();
   const [mouseDown, setMouseDown] = useState(false);
@@ -35,7 +36,7 @@ function Locator(props) {
   }, [mouseDown, movementX]);
 
   useEffect(() => {
-    const handleMouseUp = (e) => setMouseDown(false);
+    const handleMouseUp = () => setMouseDown(false);
 
     window.addEventListener("mouseup", handleMouseUp);
 
@@ -47,6 +48,12 @@ function Locator(props) {
 
   return (
     <div className="Locator_container">
+      <div
+        className="Locator_splitter"
+        onMouseDown={() => {
+          return handleMouseDown();
+        }}
+      ></div>
       <div className="Locator" ref={panel}>
         <div className="Locator_header">
           <span className="setting_icon">
@@ -63,12 +70,6 @@ function Locator(props) {
         </div>
         <div className="Locator_panel">Locator Panel</div>
       </div>
-      <div
-        className="Locator_splitter"
-        onMouseDown={() => {
-          return handleMouseDown();
-        }}
-      ></div>
     </div>
   );
 }

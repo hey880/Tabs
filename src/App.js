@@ -9,6 +9,7 @@ import Device from "./Tabs/Device";
 import Locator from "./Tabs/Locator";
 
 function App() {
+  
   const [project, setProject] = useState(false);
   const [device, setDevice] = useState(false);
   const [locator, setLocator] = useState(false);

@@ -36,7 +36,7 @@ function Project(props) {
   }, [mouseDown, movementX]);
 
   useEffect(() => {
-    const handleMouseUp = (e) => setMouseDown(false);
+    const handleMouseUp = () => setMouseDown(false);
 
     window.addEventListener("mouseup", handleMouseUp);
 
