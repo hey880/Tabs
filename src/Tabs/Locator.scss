@@ -10,12 +10,15 @@
     display: -ms-flexbox;
     display: -moz-box;
     display: flex;
-    position: relative;
+    position: absolute;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
         -moz-flex-direction: row;
             flex-direction: row;
+            overflow: hidden;
+    right: 20px;
+    height: 100%;
 }
 
 .Locator {
@@ -50,7 +53,7 @@
 .Locator__splitter {
     left: 0;
     width: 10px;
-    height: 100%;
+    height: auto;
     right: 100%;
     background-color: #3C3F41;
     cursor: e-resize;
