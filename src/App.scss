@@ -1,13 +1,25 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 $background : #2B2B2B;
 $side_background : #3C3F41;
 
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
 .titlebar {
   background-color: $side_background;
+  width: auto;
   border: 1px solid #383A3B;
-  width: 1918px;
-  height: 40px;
+  height: 38px;
 }
 
 .logo {
@@ -15,34 +27,45 @@ $side_background : #3C3F41;
 }
 
 .App__contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box; 
   display: flex;
   position: relative;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      -moz-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
-  height: 1040px;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   color: #B3B3B3;
   background-color: #2B2B2B;
   text-align: center;
-  overflow: hidden;
 }
 
 .App__contents_project_panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box; 
   display: flex;
   width: 100%;
-  height: 1040px;
+  height: 100%;
 }
 
 .App__contents_empty_panel {
-  width: 1880px;
-  height: 1040px;
-  line-height: 1072px;
+  width: 100%;
+  height: 100%;
+  line-height: 872px;
 }
 
 .App__contents_device_panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box; 
   display: flex;
   width: auto;
-  height: 1040px;
+  height: 100%;
 }
 
 .App__contents_locator_panel {
@@ -51,7 +74,10 @@ $side_background : #3C3F41;
 
 .App__contents_left_sidebar {
   list-style: none;
-  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      -moz-writing-mode: vertical-rl;
+          writing-mode: vertical-rl;
   width: 20px;
   background-color: $side_background;
   color: #B3B3B3;
@@ -63,20 +89,36 @@ $side_background : #3C3F41;
     height: 130px;
     text-align: center;
     line-height: -36px;
-    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -moz-​transform: rotate(-180deg);
+            transform: rotate(-180deg);
     cursor: pointer;
   }
 }
 
 .folder_icon {
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -moz-​transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .App__contents_right_sidebar {
   @extend .App__contents_left_sidebar;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      -moz-flex-direction: row;
+          flex-direction: row;
   li {
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -moz-transform: rotate(0);
+            transform: rotate(0);
   }
 }

@@ -41,21 +41,20 @@ function Locator(props) {
     window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
-      setMouseDown(false);
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
 
   return (
-    <div className="Locator_container">
+    <div className="Locator__container">
       <div
-        className="Locator_splitter"
+        className="Locator__splitter"
         onMouseDown={() => {
           return handleMouseDown();
         }}
       ></div>
       <div className="Locator" ref={panel}>
-        <div className="Locator_header">
+        <div className="Locator__header">
           <span className="setting_icon">
             <Setting />
           </span>
@@ -68,7 +67,7 @@ function Locator(props) {
             <Minimize />
           </span>
         </div>
-        <div className="Locator_panel">Locator Panel</div>
+        <div className="Locator__panel">Locator Panel</div>
       </div>
     </div>
   );

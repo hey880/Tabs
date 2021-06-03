@@ -1,20 +1,34 @@
-.Device_container {
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.Device__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
     display: flex;
     position: relative;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        -moz-flex-direction: row;
+            flex-direction: row;
 }
 
 .Device {
     width: 511px;
-    line-height: 1010px;
+    line-height: 810px;
     background-color: #2B2B2B;
     overflow: hidden;
 }
 
-.Device_header {
+.Device__header {
     position: relative;    
-    line-height: 30px;
-    height: 30px;
+    line-height: 28px;
+    height: 28px;
     background-color: #3C3F41;
     border: 1px solid #383A3B;
 }
@@ -23,7 +37,7 @@
     position: absolute;
     float: right;
     right: 14px;
-    top: 5px;
+    top: 3px;
     cursor: pointer;
 }
 
@@ -33,10 +47,10 @@
     cursor: default;
 }
 
-.Device_splitter {
+.Device__splitter {
     left: 0;
     width: 10px;
-    height: 1040px;
+    height: 100%;
     right: 100%;
     background-color: #3C3F41;
     cursor: e-resize;

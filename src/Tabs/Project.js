@@ -47,9 +47,9 @@ function Project(props) {
   }, []);
 
   return (
-    <div className="Project_container">
+    <div className="Project__container">
       <div className="Project" ref={panel}>
-        <div className="Project_header">
+        <div className="Project__header">
           <span
             className="minimize_icon"
             onClick={() => {
@@ -62,10 +62,10 @@ function Project(props) {
             <Setting />
           </span>
         </div>
-        <div className="Project_panel">Project Panel</div>
+        <div className="Project__panel">Project Panel</div>
       </div>
       <div
-        className="Project_splitter"
+        className="Project__splitter"
         onMouseDown={() => {
           return handleMouseDown();
         }}

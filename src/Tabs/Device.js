@@ -46,15 +46,15 @@ function Device(props) {
   }, []);
 
   return (
-    <div className="Device_container">
+    <div className="Device__container">
       <div
-        className="Device_splitter"
+        className="Device__splitter"
         onMouseDown={() => {
           return handleMouseDown();
         }}
       ></div>
       <div className="Device" ref={panel}>
-        <div className="Device_header">
+        <div className="Device__header">
           <span className="setting_icon">
             <Setting />
           </span>
@@ -67,7 +67,7 @@ function Device(props) {
             <Minimize />
           </span>
         </div>
-        <div className="Device_panel">Device Panel</div>
+        <div className="Device__panel">Device Panel</div>
       </div>
     </div>
   );

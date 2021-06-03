@@ -1,22 +1,36 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 $side_background : #3C3F41;
 
-.Project_container {
+.Project__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
     display: flex;
     position: relative;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        -moz-flex-direction: row;
+            flex-direction: row;
 }
 
 .Project {
     width: 542px;
-    line-height: 1010px;
+    line-height: 810px;
     background-color: #2B2B2B;
     overflow: hidden;
 }
 
-.Project_header {
+.Project__header {
     position: relative;    
-    line-height: 30px;
-    height: 30px;
+    line-height: 28px;
+    height: 28px;
     background-color: $side_background;
     border: 1px solid #383A3B;
 }
@@ -25,7 +39,7 @@ $side_background : #3C3F41;
     position: absolute;
     float: right;
     right: 14px;
-    top: 5px;
+    top: 3px;
     cursor: pointer;
 }
 
@@ -35,7 +49,7 @@ $side_background : #3C3F41;
     cursor: default;
 }
 
-.Project_splitter {
+.Project__splitter {
     width: 10px;
     height: 100%;
     left: 100%;
