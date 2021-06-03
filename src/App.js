@@ -29,6 +29,7 @@ function App() {
     }
   }
 
+  console.log(project)
   return (
     <div className="App">
       <header className="titlebar">
